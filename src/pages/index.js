@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Layout>
         <div>
-          <p className='text-2xl text-red-800'>we</p>
+          <p className='text-2xl text-red-800'>testtesttest</p>
         </div>
       </Layout>
     </>
