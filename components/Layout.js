@@ -1,26 +1,22 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
-import React from "react";
-import { useState, useEffect } from "react";
-import Script from 'next/script'
+import React, { useEffect, useState } from "react";
 
 export default function Layout({ children, home }) {
   const [isMobile, setIsMobile] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
 
-    const toggleTheme = () => {
-        console.log('triggered')
-        if (theme === 'light') {
-            setTheme('dark');
-            localStorage.setItem('theme', 'dark');
-        } else { 
-            setTheme('light');
-            localStorage.setItem('theme', 'light');
-        }
-     }
+  const toggleTheme = () => {
+    console.log("triggered");
+    if (theme === "light") {
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+    }
+  };
 
-    
   const handleResize = () => {
     if (window.innerWidth < 720) {
       setIsMobile(true);
@@ -40,19 +36,23 @@ export default function Layout({ children, home }) {
   }, [isMobile]);
 
   useEffect(() => {
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        setTheme('dark')
-        document.documentElement.classList.add('dark');
-      } else {
-        setTheme('light');
-        document.documentElement.classList.remove('dark');
-      }
-  }, [])
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   const links = {
-    'Events': '/events',
-    'FAQ': '/faq'
-  }
+    Events: "/events",
+    FAQ: "/faq",
+  };
 
   return (
     <div>
@@ -122,9 +122,8 @@ export default function Layout({ children, home }) {
               <div className="text-zinc-400">
                 <p className="text-zinc-500 font-medium">Links</p>
                 {Object.keys(links).map((x) => {
-                  // eslint-disable-next-line react/jsx-key
                   return (
-                    <Link href={links[x]}>
+                    <Link href={links[x]} key={x}>
                       <p className="hover:underline">{x}</p>
                     </Link>
                   );
