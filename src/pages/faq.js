@@ -16,7 +16,7 @@ export default function FAQ() {
                 What is life?
               </p>
               <p className="mt-2"></p>
-              <p className="text-base leading-6 text-gray-500">
+              <p className="text-base leading-6 text-gray-600">
                 Explanation of life
               </p>
               <p />
@@ -26,7 +26,7 @@ export default function FAQ() {
                 What is life?
               </p>
               <p className="mt-2"></p>
-              <p className="text-base leading-6 text-gray-500">
+              <p className="text-base leading-6 text-gray-600">
                 Explanation of life
               </p>
               <p />
@@ -36,7 +36,7 @@ export default function FAQ() {
                 What is life?
               </p>
               <p className="mt-2"></p>
-              <p className="text-base leading-6 text-gray-500">
+              <p className="text-base leading-6 text-gray-600">
                 Explanation of life
               </p>
               <p />
@@ -46,7 +46,7 @@ export default function FAQ() {
                 What is life?
               </p>
               <p className="mt-2  "></p>
-              <p className="text-base leading-6 text-gray-500">
+              <p className="text-base leading-6 text-gray-600">
                 Explanation of life
               </p>
               <p />
@@ -56,7 +56,7 @@ export default function FAQ() {
                 What is life?
               </p>
               <p className="mt-2"></p>
-              <p className="text-base leading-6 text-gray-500">
+              <p className="text-base leading-6 text-gray-600">
                 Explanation of life
               </p>
               <p />
@@ -66,7 +66,7 @@ export default function FAQ() {
                 What is life?
               </p>
               <p className="mt-2"></p>
-              <p className="text-base leading-6 text-gray-500">
+              <p className="text-base leading-6 text-gray-600">
                 Explanation of life
               </p>
               <p />

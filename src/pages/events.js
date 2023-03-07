@@ -7,7 +7,7 @@ export default function Events() {
     return (
         <>
             <Layout>
-                <p className={'text-pink-500'}> placeholder </p>
+                <p className={'text-cyan-600'}> placeholder </p>
             </Layout>
         </>
     )
