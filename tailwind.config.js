@@ -8,7 +8,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["ui-sans-serif", "-apple-system", "BlinkMacSystemFont", "Inter", "Helvetica"],
+      },
+    },
   },
   plugins: [],
 }

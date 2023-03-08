@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react";
@@ -113,7 +113,7 @@ export default function Layout({ children, home }) {
               <div className="flex items-center">
                 <Tippy
                   content={
-                    <div className='w-[200px]'>
+                    <div className='min-w-[200px]'>
                         {session &&
                         !session.user.email.includes("edison.k12.nj.us") && (
                             <div className='border rounded-t border-red-500 bg-red-50 p-2'>
@@ -122,10 +122,10 @@ export default function Layout({ children, home }) {
                         )}
                         <div className='p-2'>
                             <p className='text-lg font-medium underline decoration-[1.75px] underline-offset-4 decoration-cyan-500'>{session.user.name}</p>
-                            <p className='text-slate-500 mt-1'>Logged in with Google</p>
+                            <p className='text-slate-500 mt-1'>{session.user.email}</p>
                         </div>
                         <div className='border-t border-slate-300 bg-slate-100'>
-                            <div className='p-2 font-medium hover:cursor-pointer hover:bg-slate-200 transition rounded-b'>
+                            <div className='p-2 font-medium hover:cursor-pointer hover:bg-slate-200 transition rounded-b' onClick={() => signOut()}>
                                 <FontAwesomeIcon icon={faArrowLeft} className='w-4 text-red-500' /> Log out
                             </div>
                         </div>
@@ -165,12 +165,12 @@ export default function Layout({ children, home }) {
                   Login
                 </div>
                 <span className="mx-2 text-slate-400">|</span>
-                <Link
-                  href="/signup"
-                  className="font-medium text-xl hover:text-slate-500 underline underline-offset-2 decoration-[1.75px] decoration-cyan-600 transition"
+                <div
+                  className="hover:cursor-pointer font-medium text-xl hover:text-slate-500 transition underline underline-offset-2 decoration-[1.75px] decoration-cyan-600"
+                  onClick={() => signIn("google")}
                 >
                   Sign up
-                </Link>
+                </div>
               </div>
             )}
           </div>
@@ -186,7 +186,7 @@ export default function Layout({ children, home }) {
                 className="saturate-0 opacity-50"
                 width={190}
               />
-              <p className="w-[400px] text-zinc-600">
+              <p className="mt-4 w-[400px] text-zinc-600">
                 WWMS Now
                 <br />
                 Developed for the YPAR project
