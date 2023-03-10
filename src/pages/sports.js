@@ -57,8 +57,8 @@ export default function Sports() {
                 <Tippy
                   content={
                     <div className="min-w-[200px] flex flex-col">
-                      {teams.map(x => {
-                        return <div onClick={() => setTeam(x)} className={`select-none transition flex items-center hover:cursor-pointer p-2 ${teams.indexOf(x) !== teams.length - 1 && 'border-b'} ${team === x ? 'bg-cyan-50 text-cyan-600' : 'odd:bg-white even:bg-slate-100 border-slate-300'}`} id={teams.indexOf(x)}>
+                      {teams.map((x) => {
+                        return <div onClick={() => setTeam(x)} className={`select-none transition flex items-center hover:cursor-pointer p-2 ${teams.indexOf(x) !== teams.length - 1 && 'border-b'} ${team === x ? 'bg-cyan-50 text-cyan-600' : 'odd:bg-white even:bg-slate-100 border-slate-300'}`} id={teams.indexOf(x)} key={x}>
                             {x} <FontAwesomeIcon icon={team === x ? faCircleSolid : faCircle} className='transition ml-auto' />
                         </div>
                       })}
