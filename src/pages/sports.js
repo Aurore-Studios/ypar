@@ -87,7 +87,7 @@ export default function Sports() {
                   content={
                     <div className="min-w-[200px] flex flex-col">
                       {contents.map(x => {
-                        return <div onClick={() => setContent(x)} className={`select-none transition flex items-center hover:cursor-pointer p-2 ${contents.indexOf(x) !== contents.length - 1 && 'border-b'} ${content === x ? 'bg-cyan-50 text-cyan-600' : 'odd:bg-white even:bg-slate-100 border-slate-300'}`} id={contents.indexOf(x)}>
+                        return <div onClick={() => setContent(x)} className={`select-none transition flex items-center hover:cursor-pointer p-2 ${contents.indexOf(x) !== contents.length - 1 && 'border-b'} ${content === x ? 'bg-cyan-50 text-cyan-600' : 'odd:bg-white even:bg-slate-100 border-slate-300'}`} id={contents.indexOf(x)} key={x}>
                             {x} <FontAwesomeIcon icon={content === x ? faCircleSolid : faCircle} className='transition ml-auto' />
                         </div>
                       })}
