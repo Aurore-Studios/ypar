@@ -7,7 +7,7 @@ export default function FAQ() {
 
             <Layout>
                 <div className="max-w-screen-xl p-8 mx-auto">
-                    <h2 className="mb-12 text-3xl font-extrabold leading-9 text-gray-900 border-b-2 border-gray-100">
+                    <h2 className="pb-4 mb-12 text-3xl font-extrabold leading-9 text-gray-900 border-b-2 border-gray-100">
                         FAQs
                     </h2>
                     <ul className="flex flex-wrap items-start gap-8">

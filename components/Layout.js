@@ -221,7 +221,7 @@ export default function Layout({ children, home }) {
                 trigger="click"
                 placement="bottom-start"
             >
-                <FontAwesomeIcon icon={faGripLines} className='ml-4 bg-slate-100 border border-slate-300 rounded-lg p-2' />
+                <FontAwesomeIcon icon={faGripLines} className='mt-1 hover:cursor-pointer ml-4 bg-slate-100 border border-slate-300 rounded-lg p-2' />
             </Tippy>
           </div>
         </div>
@@ -229,7 +229,7 @@ export default function Layout({ children, home }) {
         {children}
 
         <div className="shadow-inner shadow-slate-200/50 py-8 lg:px-16 md:px-8 px-4 w-full border-t border-slate-300 mt-16">
-          <div className="flex flex-wrap">
+          <div className="flex">
             <div className="font-medium">
               <img
                 src="/logo.png"
@@ -245,32 +245,34 @@ export default function Layout({ children, home }) {
                 Dixit, and Dillon Petagna
               </p>
             </div>
-            <div className="ml-8 flex flex-wrap">
-              <div className="text-zinc-400">
-                <p className="text-zinc-600 font-medium">Links</p>
-                {Object.keys(links).map((x) => {
-                  return (
-                    <Link href={links[x]} key={x}>
-                      <p className="hover:underline">{x}</p>
+            <div className='lg:flex md:flex hidden flex-wrap'>
+                <div className="ml-8 flex flex-wrap">
+                <div className="text-zinc-400">
+                    <p className="text-zinc-600 font-medium">Links</p>
+                    {Object.keys(links).map((x) => {
+                    return (
+                        <Link href={links[x]} key={x}>
+                        <p className="hover:underline">{x}</p>
+                        </Link>
+                    );
+                    })}
+                </div>
+                </div>
+                <div className="ml-8 flex flex-wrap">
+                <div className="text-zinc-400">
+                    <p className="text-zinc-600 font-medium">Official WWMS Links</p>
+                    <Link href={"https://wwms.edison.k12.nj.us"}>
+                    <p className="hover:underline">WWMS Website</p>
                     </Link>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="ml-8 flex flex-wrap">
-              <div className="text-zinc-400">
-                <p className="text-zinc-600 font-medium">Official WWMS Links</p>
-                <Link href={"https://wwms.edison.k12.nj.us"}>
-                  <p className="hover:underline">WWMS Website</p>
-                </Link>
-                <Link
-                  href={
-                    "https://www.youtube.com/@woodrowwilsonmiddleschool5029"
-                  }
-                >
-                  <p className="hover:underline">WWMS YouTube</p>
-                </Link>
-              </div>
+                    <Link
+                    href={
+                        "https://www.youtube.com/@woodrowwilsonmiddleschool5029"
+                    }
+                    >
+                    <p className="hover:underline">WWMS YouTube</p>
+                    </Link>
+                </div>
+                </div>
             </div>
           </div>
         </div>

@@ -29,7 +29,15 @@ export default function Sports() {
     <>
       <Layout>
         <div className="lg:px-16 md:px-8 px-4 pt-16">
-            <p className='text-lg mb-6 uppercase font-medium text-cyan-600'>Sports</p>
+            <p className='flex items-center text-lg mb-6 uppercase font-medium text-cyan-600'>
+                Sports{" "}
+                <span className='text-xs rounded-full p-0.5 px-2 border border-cyan-500 bg-cyan-100 text-cyan-600 ml-4'>
+                    {team}
+                </span>{" "}
+                <span className='text-xs rounded-full p-0.5 px-2 border border-cyan-500 bg-cyan-100 text-cyan-600 ml-2'>
+                    {content}
+                </span>
+            </p>
           <div className="flex items-start">
             <div>
               <p className="text-4xl font-bold">Upcoming</p>
@@ -38,6 +46,7 @@ export default function Sports() {
               <p className="text-4xl font-bold mt-6">Past posts</p>
               <p className='text-slate-500 mt-2'>Placeholder</p>
             </div>
+            {/* TODO filters: multi-select teams and content */}
             <div className="pb-4 flex-col shadow-[0px_4px_0px_0px_#06b6d490] lg:flex md:flex hidden ml-auto border border-cyan-500 rounded p-2 w-[300px]">
               <p className="text-lg font-medium">Filter this content</p>
               <hr className="my-2" />
