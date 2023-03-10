@@ -63,7 +63,6 @@ export default function Layout({ children, home }) {
   const links = {
     Sports: "/sports",
     Events: "/events",
-    Teams: "/teams", // sport teams e.g. boys basketball team, track
     FAQ: "/faq",
   };
 
@@ -126,7 +125,7 @@ export default function Layout({ children, home }) {
                         !session.user.email.includes("edison.k12.nj.us") && (
                           <div className="border rounded-t border-red-500 bg-red-50 p-2">
                             <p className="text-xs text-red-500">
-                              This account isn&apos;t an Edison account. Some
+                              <FontAwesomeIcon icon={faExclamationCircle} className='text-red-500' /> This account isn&apos;t an Edison account. Some
                               features will be disabled for students&apos;
                               safety.
                             </p>
@@ -170,9 +169,9 @@ export default function Layout({ children, home }) {
                     {session &&
                       !session.user.email.includes("edison.k12.nj.us") && (
                         <FontAwesomeIcon
-                          icon={faExclamationCircle}
-                          className="-translate-y-3 -translate-x-2 text-red-500"
-                        />
+                            icon={faExclamationCircle}
+                            className="-translate-y-3 -translate-x-2 text-red-500 rounded-full border-2 border-white"
+                            />
                       )}
                   </div>
                 </Tippy>
