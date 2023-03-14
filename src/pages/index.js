@@ -2,9 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
+import {signIn, useSession} from "next-auth/react";
 
 export default function Home() {
+  const { data: session } = useSession()
   return (
     <>
       <Layout>
@@ -26,6 +27,7 @@ export default function Home() {
                   </span>
                   , and even more.
                 </p>
+                { !session ? (
                 <div className="mx-auto flex items-center text-2xl mt-4 font-medium">
                   <div
                     className="hover:cursor-pointer shadow-[0px_4px_0px_0px_#0891b290] hover:border-cyan-600 hover:text-cyan-600 hover:bg-cyan-500/20 transition border border-cyan-600 p-3 py-2 rounded-full text-cyan-600"
@@ -46,6 +48,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
+                ) : (<div></div>)}
               </div>
             </div>
           </div>

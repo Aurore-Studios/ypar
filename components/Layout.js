@@ -196,7 +196,7 @@ export default function Layout({ children, home }) {
               </div>
             )}
           </div>
-          
+
           <div className='lg:hidden md:hidden'>
             <Tippy
                 content={
@@ -280,3 +280,5 @@ export default function Layout({ children, home }) {
     </div>
   );
 }
+
+

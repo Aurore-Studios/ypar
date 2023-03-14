@@ -5,7 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faCircle as faCircleSolid } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
+import BarGraph from "../../components/BarGraph"
+import dynamic from "next/dynamic";
 
+const Surveys = dynamic(() => import("../../components/Surveys"), { ssr: false });
 export default function Sports() {
     const [team, setTeam] = useState('Any team');
     const [content, setContent] = useState('Any content');
@@ -39,12 +42,12 @@ export default function Sports() {
                 </span>
             </p>
           <div className="flex items-start">
-            <div>
+            <div className={"items-center w-full justify-center place-items-center"}>
               <p className="text-4xl font-bold">Upcoming</p>
-              <p className='text-slate-500 mt-2'>Placeholder</p>
+              <p className='text-slate-500 mt-2'><Surveys /></p>
 
               <p className="text-4xl font-bold mt-6">Past posts</p>
-              <p className='text-slate-500 mt-2'>Placeholder</p>
+              <BarGraph />
             </div>
             {/* TODO filters: multi-select teams and content */}
             <div className="pb-4 flex-col shadow-[0px_4px_0px_0px_#06b6d490] lg:flex md:flex hidden ml-auto border border-cyan-500 rounded p-2 w-[300px]">
