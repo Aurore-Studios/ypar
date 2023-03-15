@@ -17,17 +17,6 @@ export default function Layout({ children, home }) {
   const [theme, setTheme] = useState("light");
   const { data: session, status } = useSession();
 
-  const toggleTheme = () => {
-    console.log("triggered");
-    if (theme === "light") {
-      setTheme("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      setTheme("light");
-      localStorage.setItem("theme", "light");
-    }
-  };
-
   const handleResize = () => {
     if (window.innerWidth < 720) {
       setIsMobile(true);
@@ -35,6 +24,11 @@ export default function Layout({ children, home }) {
       setIsMobile(false);
     }
   };
+
+
+  useEffect(() => {
+    console.log(session)
+  }, [session])
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -121,8 +115,8 @@ export default function Layout({ children, home }) {
                 <Tippy
                   content={
                     <div className="min-w-[200px]">
-                      {session &&
-                        !session.user.email.includes("edison.k12.nj.us") && (
+                      {session && (
+                        !session.user.edisonaccount && (
                           <div className="border rounded-t border-red-500 bg-red-50 p-2">
                             <p className="text-xs text-red-500">
                               <FontAwesomeIcon icon={faExclamationCircle} className='text-red-500' /> This account isn&apos;t an Edison account. Some
@@ -130,7 +124,7 @@ export default function Layout({ children, home }) {
                               safety.
                             </p>
                           </div>
-                        )}
+                    ))}
                       <div className="p-2">
                         <p className="text-lg font-medium underline decoration-[1.75px] underline-offset-4 decoration-cyan-500">
                           {session.user.name}
@@ -167,7 +161,7 @@ export default function Layout({ children, home }) {
                       className="border border-slate-300 rounded-full"
                     />
                     {session &&
-                      !session.user.email.includes("edison.k12.nj.us") && (
+                      !session.user.edisonaccount && (
                         <FontAwesomeIcon
                             icon={faExclamationCircle}
                             className="-translate-y-3 -translate-x-2 text-red-500 rounded-full border-2 border-white"
