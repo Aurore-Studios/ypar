@@ -49,7 +49,7 @@ export default function Bookings() {
                                     <div className='text-left ml-4'>
                                         <p className='text-2xl text-black'>Confirm you&apos;re going to this dance as <span className='font-semibold underline underline-offset-[3px] decoration-cyan-600'>{session.user.name}</span></p>
                                         <p className='text-lg mt-2'>
-                                            We cannot refund tickets, so please make sure you are signed into the right account!<br />If you need to switch accounts, select "sign me out."
+                                            We cannot refund tickets, so please make sure you are signed into the right account!<br />If you need to switch accounts, select &quot;sign me out.&quot;
                                         </p>
                                         <div className='flex items-center mt-6'>
                                             <div className='mr-1.5 w-1/2 text-center font-medium text-cyan-600 rounded-full py-1.5 px-3 border border-cyan-600 hover:cursor-pointer hover:bg-cyan-50' onClick={() => setBeginCountdown(true)}>
