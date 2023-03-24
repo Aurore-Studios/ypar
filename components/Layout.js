@@ -58,6 +58,7 @@ export default function Layout({ children, home }) {
     Sports: "/sports",
     Events: "/events",
     FAQ: "/faq",
+    Bookings: '/bookings',
   };
 
   if (session) {
