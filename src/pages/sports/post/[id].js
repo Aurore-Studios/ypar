@@ -88,7 +88,7 @@ export default function Sports() {
           <p className='text-3xl font-medium mb-4'>Comments</p>
           {session ? <div className='flex items-center'>
             <img src={session.user.image} className='rounded-full border border-slate-300' width={40} />
-            <input placeholder='Leave a comment...' className='border border-slate-300 p-1.5 rounded-full ml-4 px-3' />
+            <input placeholder='Leave a comment...' className='lg:w-1/2 md:w-3/4 w-[80%] border border-slate-300 p-1.5 rounded-full ml-4 px-3' />
             <div className='border border-cyan-500 bg-cyan-100 text-cyan-600 hover:cursor-pointer select-none  p-1.5 rounded-full ml-4 px-3'>
               <FontAwesomeIcon icon={faPaperPlane} />
             </div>

@@ -1,15 +1,13 @@
 export default function Surveys() {
-    return (
-        <div className="w-full md:w-96 md:max-w-full items-center w-max max-w-screen-md">
-            <div className="p-6 sm:rounded-md items-center w-max max-w-screen-md pl-[4.5rem] pr-[4.5rem] rounded-lg shadow-xl bg-white ">
-                <form method="POST" action="#">
-                    <div className="block mb-6">
-            <span className="text-gray-700">
-              What grade are you in?
-            </span>
-                        <select
-                            name="present"
-                            className="
+  return (
+    <div className="w-[400px] md:max-w-full items-center max-w-screen-md">
+      <div className="p-6 py-4 sm:rounded-md items-center border border-slate-300 rounded mt-4 shadow bg-white ">
+        <form method="POST" action="#">
+          <div className="block mb-6">
+            <span className="font-medium text-lg">What grade are you in?</span>
+            <select
+              name="present"
+              className="
             block
             w-full
             accent-cyan-600
@@ -22,40 +20,40 @@ export default function Surveys() {
             focus:ring-cyan-200
             focus:ring-opacity-50
           "
-                        >
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                        </select>
-                    </div>
+            >
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select>
+          </div>
 
-                    <span className="text-gray-700">
-              Who do you think is going to win this game?
-            </span>
-                    <div className="mb-6">
-                        <div className="mt-2">
-                            <div>
-                                <div className="inline-flex items-center">
-                                    <input
-                                        name="season"
-                                        type="radio"
-                                        className="
+          <span className="font-medium text-lg">
+            Who do you think is going to win this game?
+          </span>
+          <div className="mb-6">
+            <div className="mt-2">
+              <div>
+                <div className="inline-flex items-center">
+                  <input
+                    name="season"
+                    type="radio"
+                    className="
                   text-cyan-600
                   border-gray-300
                   rounded-full
                   shadow-sm
                 "
-                                        defaultChecked
-                                    />
-                                    <span className="ml-2">WWMS</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="inline-flex items-center">
-                                    <input
-                                        name="season"
-                                        type="radio"
-                                        className="
+                    defaultChecked
+                  />
+                  <span className="ml-2">WWMS</span>
+                </div>
+              </div>
+              <div>
+                <div className="inline-flex items-center">
+                  <input
+                    name="season"
+                    type="radio"
+                    className="
                   text-cyan-600
                   border-gray-300
                   rounded-full
@@ -66,19 +64,18 @@ export default function Surveys() {
                   focus:ring-cyan-200
                   focus:ring-opacity-50
                 "
-                                    />
-                                    <span className="ml-2">JAMS</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mb-6">
-                        <button
-                            type="submit"
-                            className="
-            h-10
-            px-5
-            text-cyan-100
+                  />
+                  <span className="ml-2">JAMS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mb-6">
+            <button
+              type="submit"
+              className="
+            p-2 px-4
+            text-white font-medium
             bg-cyan-700
             rounded-lg
             transition-colors
@@ -87,12 +84,12 @@ export default function Surveys() {
             hover:bg-cyan-800
 
           "
-                        >
-                            Send Answers
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    );
+            >
+              Send Answers
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }

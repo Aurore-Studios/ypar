@@ -87,7 +87,7 @@ export default function Layout({ children, home }) {
         <title>WWMS Now ∙ The place for everything WWMS</title>
       </Head>
       <div className={`w-full min-h-screen`}>
-        <div className="bg-white sticky top-0 flex items-center hover:cursor-default w-full py-3 lg:px-16 md:px-8 px-4 border-b border-slate-300 shadow-lg shadow-slate-500/10">
+        <div className="z-[1000] bg-white sticky top-0 flex items-center hover:cursor-default w-full py-3 lg:px-16 md:px-8 px-4 border-b border-slate-300 shadow-lg shadow-slate-500/10">
           <Link href="/">
             <img
               src="/logo.png"
