@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Surveys() {
   return (
     <div className="w-[400px] md:max-w-full items-center max-w-screen-md">
@@ -27,33 +29,33 @@ export default function Surveys() {
             </select>
           </div>
 
-          <span className="font-medium text-lg">
-            Who do you think is going to win this game?
-          </span>
-          <div className="mb-6">
-            <div className="mt-2">
-              <div>
-                <div className="inline-flex items-center">
-                  <input
-                    name="season"
-                    type="radio"
-                    className="
+                    <span className="text-gray-700">
+              Who do you think is going to win this game?
+            </span>
+                    <div className="mb-6">
+                        <div className="mt-2">
+                            <div>
+                                <div className="inline-flex items-center">
+                                    <input
+                                        name="season"
+                                        type="radio"
+                                        className="
                   text-cyan-600
                   border-gray-300
                   rounded-full
                   shadow-sm
                 "
-                    defaultChecked
-                  />
-                  <span className="ml-2">WWMS</span>
-                </div>
-              </div>
-              <div>
-                <div className="inline-flex items-center">
-                  <input
-                    name="season"
-                    type="radio"
-                    className="
+                                        defaultChecked
+                                    />
+                                    <span className="ml-2">WWMS</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="inline-flex items-center">
+                                    <input
+                                        name="season"
+                                        type="radio"
+                                        className="
                   text-cyan-600
                   border-gray-300
                   rounded-full
@@ -64,18 +66,19 @@ export default function Surveys() {
                   focus:ring-cyan-200
                   focus:ring-opacity-50
                 "
-                  />
-                  <span className="ml-2">JAMS</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="mb-6">
-            <button
-              type="submit"
-              className="
-            p-2 px-4
-            text-white font-medium
+                                    />
+                                    <span className="ml-2">JAMS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mb-6">
+                        <button
+                            type="submit"
+                            className="
+            h-10
+            px-5
+            text-cyan-100
             bg-cyan-700
             rounded-lg
             transition-colors
@@ -84,12 +87,12 @@ export default function Surveys() {
             hover:bg-cyan-800
 
           "
-            >
-              Send Answers
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
+                        >
+                            Send Answers
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 }
