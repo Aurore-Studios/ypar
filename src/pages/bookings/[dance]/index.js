@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "components/Layout";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { faPaypal, faApple } from "@fortawesome/free-brands-svg-icons";
 import { useRouter } from "next/router";
 
@@ -49,7 +49,7 @@ export default function Bookings() {
                                     <div className='text-left ml-4'>
                                         <p className='text-2xl text-black'>Confirm you&apos;re going to this dance as <span className='font-semibold underline underline-offset-[3px] decoration-cyan-600'>{session.user.name}</span></p>
                                         <p className='text-lg mt-2'>
-                                            We cannot refund tickets, so please make sure you are signed into the right account!<br />If you need to switch accounts, select "sign me out."
+                                            We cannot refund tickets, so please make sure you are signed into the right account!<br />If you need to switch accounts, select &apos;sign me out.&apos;
                                         </p>
                                         <div className='flex items-center mt-6'>
                                             <div className='mr-1.5 w-1/2 text-center font-medium text-cyan-600 rounded-full py-1.5 px-3 border border-cyan-600 hover:cursor-pointer hover:bg-cyan-50' onClick={() => setBeginCountdown(true)}>
@@ -73,11 +73,11 @@ export default function Bookings() {
                                         <br />
                                         After purchasing, we will redirect you to your digital ticket, which will be used for entry at the dance.
                                     </p>
-                                    <div className='flex items-center'>
-                                        <div className='mt-4 mr-1.5 w-1/2 text-center font-medium rounded-full py-1.5 px-3 border border-blue-600 hover:cursor-pointer hover:bg-blue-50' onClick={() => router.replace('/bookings/glow-in-the-dark/ba8d5e31-006e-47a8-ba93-9a62a354b111')}>
+                                    <div className='flex items-center lg:flex-nowrap md:flex-nowrap flex-wrap'>
+                                        <div className='mt-4 mr-1.5 lg:w-1/2 md:w-1/2 w-full text-center font-medium rounded-full py-1.5 px-3 border border-blue-600 hover:cursor-pointer hover:bg-blue-50' onClick={() => router.replace('/bookings/glow-in-the-dark/ba8d5e31-006e-47a8-ba93-9a62a354b111')}>
                                             <FontAwesomeIcon icon={faPaypal} className='text-blue-600 mr-1' /> Pay with <span className='text-blue-600'>PayPal</span>
                                         </div>
-                                        <div className='mt-3 ml-1.5 w-1/2 text-center font-medium rounded-full py-1.5 px-3 border border-slate-500 hover:cursor-pointer hover:bg-slate-100' onClick={() => router.replace('/bookings/glow-in-the-dark/ba8d5e31-006e-47a8-ba93-9a62a354b111')}>
+                                        <div className='mt-3 lg:ml-1.5 md:ml-1.5 lg:w-1/2 md:w-1/2 w-full text-center font-medium rounded-full py-1.5 px-3 border border-slate-500 hover:cursor-pointer hover:bg-slate-100' onClick={() => router.replace('/bookings/glow-in-the-dark/ba8d5e31-006e-47a8-ba93-9a62a354b111')}>
                                             <FontAwesomeIcon icon={faApple} className='text-slate-500 mr-1' /> Pay with <span className='text-slate-500'>Apple</span>
                                         </div>
                                     </div>

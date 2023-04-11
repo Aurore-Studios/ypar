@@ -1,12 +1,9 @@
 import { faArrowRight, faTicket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "components/Layout";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 export default function Bookings() {
-    const { data: session } = useSession();
-
     return <>
         <Layout>
             <div className='lg:px-16 md:px-8 px-4 py-16'>

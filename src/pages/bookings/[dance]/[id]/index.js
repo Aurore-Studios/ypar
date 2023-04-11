@@ -36,7 +36,7 @@ export default function Bookings() {
                                 <FontAwesomeIcon icon={faTicket} className='ml-auto -rotate-45' />
                             </p>
                             <p className='text-cyan-600 text-3xl font-bold'>This is {session.user.name}&apos;s ticket.</p>
-                            <p className='mt-2 text-cyan-600 text-xl font-medium'>UTI: {id}</p>
+                            <p className='mt-2 text-cyan-600 text-xl font-medium'>TID: {id}</p>
                         </div>
                         <div className='border-2 p-4 rounded-b-lg border-slate-400 border-t-0'>
                             <p className='font-medium text-2xl'>Make sure to bring your ID to the dance as well!</p>
@@ -44,7 +44,7 @@ export default function Bookings() {
                             <p className='font-medium text-xl'>Additional info</p>
                             <p className='mt-1'>Purchased on February 7th, 2023</p>
 
-                            <p className='mt-4 text-xs text-slate-500'>Your ticket&apos;s UTI is simply the identifier WWMS NOW uses to find your ticket out of hundreds of others.</p>
+                            <p className='mt-4 text-xs text-slate-500'>Your ticket&apos;s TID (Ticket Identifier) is simply the identifier WWMS NOW uses to find your ticket out of hundreds of others.</p>
                         </div>
                     </div>}
                 </div>

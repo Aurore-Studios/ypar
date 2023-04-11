@@ -4,10 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .fadein {
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
   -ms-animation: fadein 1s; /* Internet Explorer */
   -o-animation: fadein 1s; /* Opera < 12.1 */
   animation: fadein 1s;
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border-width: 1px;
+    padding: 4px;
+    padding-left: 7px;
+    display: grid;
+}  
+
+select:hover {
+    cursor: pointer;
+}
+
+select:active, select:focus {
+    outline: none;
 }

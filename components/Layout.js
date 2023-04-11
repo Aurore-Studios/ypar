@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react";
 import "tippy.js/animations/shift-toward-subtle.css";
+import Collapsible from "./Collapsible";
 
 export default function Layout({ children, home }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,10 +26,9 @@ export default function Layout({ children, home }) {
     }
   };
 
-
   useEffect(() => {
-    console.log(session)
-  }, [session])
+    console.log(session);
+  }, [session]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -40,25 +40,11 @@ export default function Layout({ children, home }) {
     };
   }, [isMobile]);
 
-  useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
   const links = {
     Sports: "/sports",
     Events: "/events",
     FAQ: "/faq",
-    Bookings: '/bookings',
+    Bookings: "/bookings",
   };
 
   if (session) {
@@ -116,16 +102,18 @@ export default function Layout({ children, home }) {
                 <Tippy
                   content={
                     <div className="min-w-[200px]">
-                      {session && (
-                        !session.user.edisonaccount && (
-                          <div className="border rounded-t border-red-500 bg-red-50 p-2">
-                            <p className="text-xs text-red-500">
-                              <FontAwesomeIcon icon={faExclamationCircle} className='text-red-500' /> This account isn&apos;t an Edison account. Some
-                              features will be disabled for students&apos;
-                              safety.
-                            </p>
-                          </div>
-                    ))}
+                      {session && !session.user.edisonaccount && (
+                        <div className="border rounded-t border-red-500 bg-red-50 p-2">
+                          <p className="text-xs text-red-500">
+                            <FontAwesomeIcon
+                              icon={faExclamationCircle}
+                              className="text-red-500"
+                            />{" "}
+                            This account isn&apos;t an Edison account. Some
+                            features will be disabled for students&apos; safety.
+                          </p>
+                        </div>
+                      )}
                       <div className="p-2">
                         <p className="text-lg font-medium underline decoration-[1.75px] underline-offset-4 decoration-cyan-500">
                           {session.user.name}
@@ -161,13 +149,12 @@ export default function Layout({ children, home }) {
                       width="35"
                       className="border border-slate-300 rounded-full"
                     />
-                    {session &&
-                      !session.user.edisonaccount && (
-                        <FontAwesomeIcon
-                            icon={faExclamationCircle}
-                            className="-translate-y-3 -translate-x-2 text-red-500 rounded-full border-2 border-white"
-                            />
-                      )}
+                    {session && !session.user.edisonaccount && (
+                      <FontAwesomeIcon
+                        icon={faExclamationCircle}
+                        className="-translate-y-3 -translate-x-2 text-red-500 rounded-full border-2 border-white"
+                      />
+                    )}
                   </div>
                 </Tippy>
               </div>
@@ -192,31 +179,38 @@ export default function Layout({ children, home }) {
             )}
           </div>
 
-          <div className='lg:hidden md:hidden'>
+          <div className="lg:hidden md:hidden">
             <Tippy
-                content={
+              content={
                 <div className="p-2 px-4 min-w-[200px] flex flex-col">
-                    {Object.keys(links).map((x) => {
-                        return (
-                            <Link
-                            href={links[x]}
-                            key={x}
-                            className="active:text-sky-500 group w-full flex items-center font-medium my-3 text-xl hover:text-slate-500 transition"
-                            >
-                            {x} <FontAwesomeIcon icon={faArrowRight} className='transition ml-auto text-slate-400 group-active:text-sky-300' />
-                            </Link>
-                        );
-                    })}
+                  {Object.keys(links).map((x) => {
+                    return (
+                      <Link
+                        href={links[x]}
+                        key={x}
+                        className="active:text-sky-500 group w-full flex items-center font-medium my-3 text-xl hover:text-slate-500 transition"
+                      >
+                        {x}{" "}
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="transition ml-auto text-slate-400 group-active:text-sky-300"
+                        />
+                      </Link>
+                    );
+                  })}
                 </div>
-                }
-                className="shadow-lg shadow-slate-500/10 bg-white border border-slate-300 mt-4 mr-1 rounded focus:outline-none"
-                animation="shift-toward-subtle"
-                interactive
-                delay={[0, 0]}
-                trigger="click"
-                placement="bottom-start"
+              }
+              className="shadow-lg shadow-slate-500/10 bg-white border border-slate-300 mt-4 mr-1 rounded focus:outline-none"
+              animation="shift-toward-subtle"
+              interactive
+              delay={[0, 0]}
+              trigger="click"
+              placement="bottom-start"
             >
-                <FontAwesomeIcon icon={faGripLines} className='mt-1 hover:cursor-pointer ml-4 bg-slate-100 border border-slate-300 rounded-lg p-2' />
+              <FontAwesomeIcon
+                icon={faGripLines}
+                className="mt-1 hover:cursor-pointer ml-4 bg-slate-100 border border-slate-300 rounded-lg p-2"
+              />
             </Tippy>
           </div>
         </div>
@@ -231,49 +225,78 @@ export default function Layout({ children, home }) {
                 className="saturate-0 opacity-50"
                 width={190}
               />
-              <p className="mt-4 w-[400px] text-zinc-600">
-                WWMS Now
-                <br />
+              <p className="mt-4 text-zinc-600">WWMS Now</p>
+              <p className="mt-1 text-zinc-600">
                 Developed for the YPAR project
+              </p>
+              <p className="mt-1 text-zinc-600">
+                By Ekya Rai Dogra, Pranav Thota,
                 <br />
-                By Pranav Thota, Ekya Dogra, Aditya Arcot-Vantel, Kushagra
-                Dixit, and Dillon Petagna
+                Aditya Arcot-Vantel, Kushagra Dixit, and Dillon Petagna
               </p>
             </div>
-            <div className='lg:flex md:flex hidden flex-wrap'>
-                <div className="ml-8 flex flex-wrap">
+            <div className="lg:flex md:flex hidden flex-wrap">
+              <div className="ml-8 flex flex-wrap">
                 <div className="text-zinc-400">
-                    <p className="text-zinc-600 font-medium">Links</p>
-                    {Object.keys(links).map((x) => {
+                  <p className="text-zinc-600 font-medium">Links</p>
+                  {Object.keys(links).map((x) => {
                     return (
-                        <Link href={links[x]} key={x}>
+                      <Link href={links[x]} key={x}>
                         <p className="hover:underline">{x}</p>
-                        </Link>
+                      </Link>
                     );
-                    })}
+                  })}
                 </div>
-                </div>
-                <div className="ml-8 flex flex-wrap">
+              </div>
+              <div className="ml-8 flex flex-wrap">
                 <div className="text-zinc-400">
-                    <p className="text-zinc-600 font-medium">Official WWMS Links</p>
-                    <Link href={"https://wwms.edison.k12.nj.us"}>
+                  <p className="text-zinc-600 font-medium">
+                    Official WWMS Links
+                  </p>
+                  <Link href={"https://wwms.edison.k12.nj.us"}>
                     <p className="hover:underline">WWMS Website</p>
-                    </Link>
-                    <Link
+                  </Link>
+                  <Link
                     href={
-                        "https://www.youtube.com/@woodrowwilsonmiddleschool5029"
+                      "https://www.youtube.com/@woodrowwilsonmiddleschool5029"
                     }
-                    >
+                  >
                     <p className="hover:underline">WWMS YouTube</p>
-                    </Link>
+                  </Link>
                 </div>
-                </div>
+              </div>
             </div>
+          </div>
+
+          <div className="lg:hidden md:hidden block">
+            <Collapsible
+              text="Links"
+              content={Object.keys(links).map((x) => {
+                return (
+                  <Link href={links[x]} key={x}>
+                    <p className="hover:underline mt-4">{x}</p>
+                  </Link>
+                );
+              })}
+            />
+            <Collapsible
+              text="Official WWMS Links"
+              content={<>
+                <Link href={"https://wwms.edison.k12.nj.us"}>
+                    <p className="hover:underline">WWMS Website</p>
+                  </Link>
+                  <Link
+                    href={
+                      "https://www.youtube.com/@woodrowwilsonmiddleschool5029"
+                    }
+                  >
+                    <p className="hover:underline mt-4">WWMS YouTube</p>
+                  </Link>
+              </>}
+            />
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-
