@@ -37,6 +37,7 @@ export default function Bookings() {
                             </p>
                             <p className='text-cyan-600 text-3xl font-bold'>This is {session.user.name}&apos;s ticket.</p>
                             <p className='mt-2 text-cyan-600 text-xl font-medium'>TID: {id}</p>
+                            <p className='mt-2 text-cyan-600 text-xl font-medium'>TID: {id}</p>
                         </div>
                         <div className='border-2 p-4 rounded-b-lg border-slate-400 border-t-0'>
                             <p className='font-medium text-2xl'>Make sure to bring your ID to the dance as well!</p>
